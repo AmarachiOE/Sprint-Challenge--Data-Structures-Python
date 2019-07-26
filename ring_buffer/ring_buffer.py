@@ -15,13 +15,18 @@ class RingBuffer:
         # return self.storage
 
     def get(self):
-        getStorage = []
+        # using list comprehension:
+        return [self.storage[i] for i in range(0, len(self.storage)) if self.storage[i] != None]
 
-        for i in range(self.capacity):
-            if self.storage[i] != None:
-                getStorage.append(self.storage[i])
 
-        return getStorage
+        # conditionally append to new variable:
+        # getStorage = []
+
+        # for i in range(self.capacity):
+        #     if self.storage[i] != None:
+        #         getStorage.append(self.storage[i])
+
+        # return getStorage
 
 
         
@@ -61,4 +66,5 @@ Get() Plan:
 - iterate through self.storage
 - append value at index i to new array if value != None
 - return the new array
+- REFACTOR -- use list comprehension!!!
 """
